@@ -14,4 +14,9 @@ class UserTest extends TestCase
     }
 
     // TODO add test methods here
+
+	protected function testNothing()
+	{
+		//doing nothing
+	}
 }
