@@ -43,7 +43,7 @@ AppAsset::register($this);
                 ['label' => 'Login', 'url' => ['/site/login']] :
 				[
 					'label' => 'Datenpflege',
-					'url' => ['datenpflege/admin'],
+					'url' => ['datenpflege/index'],
 					//'linksOptions' => ['data-method' => 'post']
 				],
                 [
