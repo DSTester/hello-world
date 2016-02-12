@@ -41,6 +41,11 @@ AppAsset::register($this);
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
+				[
+					'label' => 'Datenpflege',
+					'url' => ['datenpflege/admin'],
+					//'linksOptions' => ['data-method' => 'post']
+				],
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
