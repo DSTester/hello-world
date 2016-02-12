@@ -44,7 +44,7 @@ AppAsset::register($this);
 				[
 					'label' => 'Datenpflege',
 					'url' => ['/datenpflege/index'],
-					//'linksOptions' => ['data-method' => 'post']
+					'linksOptions' => ['data-method' => 'post']
 				],
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
