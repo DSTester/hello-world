@@ -15,46 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
 	echo Tabs::widget([
 		'items' => [
 			[
-				'label' => 'Basisdaten',
-				'items' => [
-					[
-						'label' => 'Artikel',
-						'content' => 'Artikel werden geladen ...',
-						'url' => ['http://www.hsk.de'],
-						'active' => true,
-					],
-					[
-						'label' => 'Serien',
-						'content' => 'Serien werden geladen ...',
-						'linkOptions' => ['data-url' => \yii\helpers\Url::to(['/ajax/serien'])],
-					]
-				]
+				'label' => 'M1-1',
+				'content' => 'M1-1 wird geladen ...',
+				'active' => true,
 			],
 			[
-				'label' => 'Firmendaten',
-				'items' => [
-				[
-					'label' => 'Länder',
-					'content' => 'Länder werden geladen ...',
-					'url' => 'ajax/laender',
-				],
-				[
-					'label' => 'Firmen',
-					'content' => 'Firmen werden geladen ...',
-					'url' => 'ajax/firmen',
-				],
-				[
-					'label' => 'Firmendaten',
-					'content' => 'Firmendaten werden geladen ...',
-					'url' => 'ajax/firmendaten',
-				],
-				[
-					'label' => 'Abwicklungen',
-					'content' => 'Abwicklungsdaten werden geladen ...',
-					'url' => 'ajax/abwicklungen',
-				]]
+				'label' => 'M1-2',
+				'content' => 'M1-2 wird geladen ...',
 			]
-		]])
+		]
+	]);
 ?>
 
 </div>

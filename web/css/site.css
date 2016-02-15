@@ -10,8 +10,12 @@ body {
     padding: 0 0 60px;
 }
 
-.wrap > .container, .wrap > .container-fluid {
+.wrap > .container {
     padding: 70px 15px 20px;
+}
+
+.container {
+	width: 100%;
 }
 
 .footer {

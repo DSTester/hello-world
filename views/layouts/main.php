@@ -24,17 +24,16 @@ if(Yii::$app->user->isGuest)
 {
 	$navItems[] = [
 		'label' => 'Datenpflege',
+		'url' => ['/datenpflege/index'],
 		'items' => [
-			[ 'label' => 'M1', 'url' => ['/datenpflege/m1']],
-			[ 'label' => 'M2', 'url' => ['/datenpflege/m2']],
-			[ 'label' => 'M3', 'url' => ['/datenpflege/m3']],
-			[ 'label' => 'M4', 'url' => ['/datenpflege/m4']],
-			[ 'label' => 'M5', 'url' => ['/datenpflege/m5']],
-			[ 'label' => 'M6', 'url' => ['/datenpflege/m6']],
-			[ 'label' => 'M7', 'url' => ['/datenpflege/m7']],
+			[ 'label' => 'D1', 'url' => ['/datenpflege/d1']],
+			[ 'label' => 'D2', 'url' => ['/datenpflege/d2']],
+			[ 'label' => 'D3', 'url' => ['/datenpflege/d3']],
+			[ 'label' => 'D4', 'url' => ['/datenpflege/d4']],
+			[ 'label' => 'D5', 'url' => ['/datenpflege/d5']],
+			[ 'label' => 'D6', 'url' => ['/datenpflege/d6']],
+			[ 'label' => 'D7', 'url' => ['/datenpflege/d7']],
 		]];
-		//'url' => ['/datenpflege/index'],
-		//'linksOptions' => ['data-method' => 'post']];
 	$navItems[] = [
 		'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
 		'url' => ['/site/logout'],
@@ -58,20 +57,20 @@ if(Yii::$app->user->isGuest)
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
+        //'brandLabel' => 'My Company',
+        //'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'nav-pills'],
         'items' => $navItems
     ]);
     NavBar::end();
     ?>
 
-    <div class="container-fluid">
+    <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
