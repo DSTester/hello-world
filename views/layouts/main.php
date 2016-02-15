@@ -25,7 +25,15 @@ if(Yii::$app->user->isGuest)
 	$navItems[] = [
 		'label' => 'Datenpflege',
 		'url' => ['/datenpflege/index'],
-		'linksOptions' => ['data-method' => 'post']];
+		'items' => [
+			[ 'label' => 'D1', 'url' => ['/datenpflege/d1']],
+			[ 'label' => 'D2', 'url' => ['/datenpflege/d2']],
+			[ 'label' => 'D3', 'url' => ['/datenpflege/d3']],
+			[ 'label' => 'D4', 'url' => ['/datenpflege/d4']],
+			[ 'label' => 'D5', 'url' => ['/datenpflege/d5']],
+			[ 'label' => 'D6', 'url' => ['/datenpflege/d6']],
+			[ 'label' => 'D7', 'url' => ['/datenpflege/d7']],
+		]];
 	$navItems[] = [
 		'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
 		'url' => ['/site/logout'],
@@ -50,13 +58,12 @@ if(Yii::$app->user->isGuest)
     <?php
     NavBar::begin([
         'brandLabel' => 'DS Test',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
+        'brandUrl' => Yii::$app->homeUrl,        'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'nav-pills'],
         'items' => $navItems
     ]);
     NavBar::end();
