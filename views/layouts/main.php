@@ -24,8 +24,17 @@ if(Yii::$app->user->isGuest)
 {
 	$navItems[] = [
 		'label' => 'Datenpflege',
-		'url' => ['/datenpflege/index'],
-		'linksOptions' => ['data-method' => 'post']];
+		'items' => [
+			[ 'label' => 'M1', 'url' => ['/datenpflege/m1']],
+			[ 'label' => 'M2', 'url' => ['/datenpflege/m2']],
+			[ 'label' => 'M3', 'url' => ['/datenpflege/m3']],
+			[ 'label' => 'M4', 'url' => ['/datenpflege/m4']],
+			[ 'label' => 'M5', 'url' => ['/datenpflege/m5']],
+			[ 'label' => 'M6', 'url' => ['/datenpflege/m6']],
+			[ 'label' => 'M7', 'url' => ['/datenpflege/m7']],
+		]];
+		//'url' => ['/datenpflege/index'],
+		//'linksOptions' => ['data-method' => 'post']];
 	$navItems[] = [
 		'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
 		'url' => ['/site/logout'],
@@ -62,7 +71,7 @@ if(Yii::$app->user->isGuest)
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container-fluid">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
