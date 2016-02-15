@@ -10,6 +10,28 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+
+$navItems = [
+	['label' => 'Home', 'url' => ['/site/index']],
+	['label' => 'About', 'url' => ['/site/about']],
+	['label' => 'Contact', 'url' => ['/site/contact']],
+];
+
+if(Yii::$app->user->isGuest)
+{
+	$navItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+} else
+{
+	$navItems[] = [
+		'label' => 'Datenpflege',
+		'url' => ['/datenpflege/index'],
+		'linksOptions' => ['data-method' => 'post']];
+	$navItems[] = [
+		'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+		'url' => ['/site/logout'],
+		'linkOptions' => ['data-method' => 'post']
+	];
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,23 +57,7 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
-				[
-					'label' => 'Datenpflege',
-					'url' => ['datenpflege/admin'],
-					//'linksOptions' => ['data-method' => 'post']
-				],
-                [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
-        ],
+        'items' => $navItems
     ]);
     NavBar::end();
     ?>
