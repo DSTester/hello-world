@@ -1,7 +1,7 @@
 ﻿<?php
 
 /* @var $this yii\web\View
- * @var $model app\models\Model1
+ * @var $model app\models\Modelt1
  */
 
 
