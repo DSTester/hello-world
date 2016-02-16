@@ -1,12 +1,14 @@
 <?php
+
 namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\Model1;
-use app\models\Model2;
+use app\models\db\Modelt1;
+use app\models\db\Modelt2;
+use app\models\search\Modelt1Search;
 
 class DatenpflegeController extends Controller
 {
@@ -48,9 +50,19 @@ class DatenpflegeController extends Controller
 
 	public function actionD1()
 	{
-		$m1 = new Model1();
-		$m2 = new Model2();
-		return $this->render('d1', ['model1' => $model1, 'model2' => $model2]);
+		$modelt1 = new Modelt1();
+		$modelt2 = new Modelt2();
+		$dataParamter['t1']['model'] = new Modelt1();
+		$dataParamter['t1']['searchModel'] = new Modelt1Search();
+		return $this->render('d1', ['modelt1' => $modelt1, 'modelt2' => $modelt2]);
+	}
+
+	public function actionD2()
+	{
+		//$modelt1 = new Modelt1();
+		$searchModelt1 = new Modelt1Search();
+		$dataProvidert1 = $searchModelt1->search(Yii::$app->request->get());
+		return $this->render('d2', ['searchModel' => $searchModelt1, 'dataProvider' => $dataProvidert1]);
 	}
 
     public function actionIndex()
